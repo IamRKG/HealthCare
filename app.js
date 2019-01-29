@@ -32,7 +32,7 @@ app.get('/update', (req,res) =>{
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect(config.getDBConnectionString(),{useNewUrlParser: true });
+mongoose.connect(config.getMlabConnectionString(),{useNewUrlParser: true });
 
 routers(app)
 
