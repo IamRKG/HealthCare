@@ -2,6 +2,7 @@ import {Component, OnInit, Output,EventEmitter} from '@angular/core';
 import {PatientAddService} from "../patientServices/patient-add.service";
 import {PatientFromFactory} from "../form-Controls/patient-from-factory"
 import {Patients} from "../patientInterface/patientsInterface";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-patient',
@@ -13,6 +14,7 @@ export class AddPatientComponent implements OnInit {
   patient:Patients;
   constructor(
     private  patientAddService:PatientAddService,
+    private router:Router
   ) { }
 
   patientFromFactory = new PatientFromFactory;
@@ -20,7 +22,10 @@ export class AddPatientComponent implements OnInit {
 
 
   addPatient(){
-    this.patientAddService.addPatient(this.addProfileForm.value).subscribe(successMsg => console.log(successMsg));
+    this.patientAddService.addPatient(this.addProfileForm.value).subscribe(successMsg => {
+      this.router.navigate(['/patientList']);
+      return successMsg;
+    });
   }
 
   ngOnInit() {
