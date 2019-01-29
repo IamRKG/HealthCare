@@ -1,0 +1,8 @@
+.view-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.view-container  * {
+  width: 100%;
+}

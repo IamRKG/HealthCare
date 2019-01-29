@@ -1,0 +1,75 @@
+<!--<app-update-patient [patient]="patient"></app-update-patient>-->
+<div class="view-container">
+<mat-list>
+  <mat-list-item>
+    <h2>Details</h2>
+  </mat-list-item>
+</mat-list>
+  <mat-divider></mat-divider>
+<mat-list>
+  <mat-list-item > {{patient.patientID}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.patientName}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.age}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.address}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.emailAddress}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.doctorName}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.speciality}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.paitentClinicalHistory}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.diagnosisProvisional}} </mat-list-item>
+</mat-list>
+
+
+<mat-list>
+  <mat-list-item > {{patient.notes}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.treatment}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.investigation}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.reviewAdvise}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.amount}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item > {{patient.consent}} </mat-list-item>
+</mat-list>
+
+<mat-list>
+  <mat-list-item>
+    <button mat-raised-button color="primary" (click)="edit(patient)">Edit</button>
+  </mat-list-item>
+</mat-list>
+</div>

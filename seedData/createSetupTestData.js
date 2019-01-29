@@ -1,0 +1,135 @@
+const patients = require("../ford/api/patients/model");
+
+const createSetupTestData = (app) => {
+ 
+    app.get('/api/createSetupTestData', (req,res) => {
+
+        const  patientsSeed = [{
+            patientID:0422,
+            patientName:"Ramu",
+            age:500,
+            contactNo:9584715311,
+            IPNo:0148,
+            bloodGroup:"O Positive",
+            address:"Velcahery,Chennai",
+            emailAddress:"ramc90@gmail.com",
+            doctorName:"Karthick",
+            speciality:"Cardiology",
+            paitentClinicalHistory:"Alergic to Milk",
+            treatmentsProcedures:"Admit to hospital",
+            diagnosisProvisional:"Fever",
+            notes:"NA",
+            treatment:"Tabltes",
+            investigation:"Blood test",
+            reviewAdvise:"Come after 5 days",
+            amount:2000,
+            consent:"NA"
+          },
+          {
+                patientID:0423,
+                patientName:"Ajanta",
+                age:500,
+                contactNo:9584715311,
+                IPNo:0148,
+                bloodGroup:"O Positive",
+                address:"Velcahery,Chennai",
+                emailAddress:"ramc90@gmail.com",
+                doctorName:"Karthick",
+                speciality:"Cardiology",
+                paitentClinicalHistory:"Alergic to Milk",
+                treatmentsProcedures:"Admit to hospital",
+                diagnosisProvisional:"Fever",
+                notes:"NA",
+                treatment:"Tabltes",
+                investigation:"Blood test",
+                reviewAdvise:"Come after 5 days",
+                amount:2000,
+                consent:"NA"
+            },{
+                patientID:0424,
+                patientName:"Test01",
+                age:500,
+                contactNo:9584715311,
+                IPNo:0148,
+                bloodGroup:"O Positive",
+                address:"Velcahery,Chennai",
+                emailAddress:"ramc90@gmail.com",
+                doctorName:"Karthick",
+                speciality:"Cardiology",
+                paitentClinicalHistory:"Alergic to Milk",
+                treatmentsProcedures:"Admit to hospital",
+                diagnosisProvisional:"Fever",
+                notes:"NA",
+                treatment:"Tabltes",
+                investigation:"Blood test",
+                reviewAdvise:"Come after 5 days",
+                amount:2000,
+                consent:"NA"
+            },{
+                patientID:0425,
+                patientName:"Test02",
+                age:500,
+                contactNo:9584715311,
+                IPNo:0148,
+                bloodGroup:"O Positive",
+                address:"Velcahery,Chennai",
+                emailAddress:"ramc90@gmail.com",
+                doctorName:"Karthick",
+                speciality:"Cardiology",
+                paitentClinicalHistory:"Alergic to Milk",
+                treatmentsProcedures:"Admit to hospital",
+                diagnosisProvisional:"Fever",
+                notes:"NA",
+                treatment:"Tabltes",
+                investigation:"Blood test",
+                reviewAdvise:"Come after 5 days",
+                amount:2000,
+                consent:"NA"
+            },{
+                patientID:0426,
+                patientName:"Abb",
+                age:500,
+                contactNo:9584715311,
+                IPNo:0148,
+                bloodGroup:"O Positive",
+                address:"Velcahery,Chennai",
+                emailAddress:"ramc90@gmail.com",
+                doctorName:"Karthick",
+                speciality:"Cardiology",
+                paitentClinicalHistory:"Alergic to Milk",
+                treatmentsProcedures:"Admit to hospital",
+                diagnosisProvisional:"Fever",
+                notes:"NA",
+                treatment:"Tabltes",
+                investigation:"Blood test",
+                reviewAdvise:"Come after 5 days",
+                amount:2000,
+                consent:"NA"
+            },{
+                patientID:0427,
+                patientName:"bcca",
+                age:500,
+                contactNo:9584715311,
+                IPNo:0148,
+                bloodGroup:"O Positive",
+                address:"Velcahery,Chennai",
+                emailAddress:"ramc90@gmail.com",
+                doctorName:"Karthick",
+                speciality:"Cardiology",
+                paitentClinicalHistory:"Alergic to Milk",
+                treatmentsProcedures:"Admit to hospital",
+                diagnosisProvisional:"Fever",
+                notes:"NA",
+                treatment:"Tabltes",
+                investigation:"Blood test",
+                reviewAdvise:"Come after 5 days",
+                amount:2000,
+                consent:"NA"
+            }]
+          patients.create(patientsSeed, (err,result) => {
+              res.send(result);
+          })
+    });
+}
+
+module.exports = createSetupTestData;

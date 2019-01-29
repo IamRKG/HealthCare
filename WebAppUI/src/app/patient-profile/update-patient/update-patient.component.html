@@ -1,0 +1,153 @@
+
+<form [formGroup]="updatePatientForm" class="add-container">
+  <mat-list>
+    <mat-list-item>
+      <h2>Edit Patient</h2>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Id" formControlName="patientID">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Name" formControlName="patientName">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Age" formControlName="age">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Sex" formControlName="sex">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Pateint In Time" formControlName="patientInTime">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker"  placeholder="Patient Date of Birth" formControlName="dob">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Blood Group" formControlName="bloodGroup">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" formControlName="contactNo">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Patient Address" formControlName="patientAddress"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Email Address" formControlName="emailAddress">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Doctors Name" formControlName="doctorsName">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Speciality" formControlName="speciality">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Height" formControlName="patientHeight">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Weight" formControlName="patientWeight">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient B.P" formControlName="patientBP">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Pulse" formControlName="patientPulse">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient Temperature" formControlName="patientTemperature">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient SPO" formControlName="patientSPO">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Patient R.P" formControlName="patientRP">
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Patient Clinical History" formControlName="patientClinicalHistory"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Treatments/Procedures" formControlName="treatmentsProcedures"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Diagnosis Provisional" formControlName="diagnosisProvisional"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Notes:" formControlName="notes"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Treatment" formControlName="treatment"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Investigation" formControlName="investigation"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <textarea matInput placeholder="Review/Advise" formControlName="review"></textarea>
+      </mat-form-field>
+    </mat-list-item>
+    <mat-list-item>
+      <mat-form-field>
+        <input matInput placeholder="Amount" formControlName="amount">
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <button mat-raised-button color="primary" type="button" (click)="save()">Save</button>
+    </mat-list-item>
+  </mat-list>
+
+</form>

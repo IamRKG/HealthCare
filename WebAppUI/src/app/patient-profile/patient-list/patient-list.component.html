@@ -1,0 +1,18 @@
+<mat-list>
+  <mat-list-item class="list-container">
+      <mat-form-field class="search">
+        <input matInput placeholder="Search Patient" type="search" [formControl]="searchValue">
+      </mat-form-field>
+  </mat-list-item>
+  <mat-list-item (click)="viewPatient(p)" matRipple *ngFor="let p of patients">
+    {{p.patientID}}, {{p.patientName}}, {{p.contactNo}}
+    <mat-divider></mat-divider>
+  </mat-list-item>
+</mat-list>
+
+
+<mat-list>
+  <mat-list-item class="list-container">
+    <button mat-raised-button color="accent" (click)="addPatient();" mat-button>Add Patient</button>
+  </mat-list-item>
+</mat-list>

@@ -1,0 +1,10 @@
+.header {
+  display: flex;
+  justify-content: left;
+  width: 100%;
+}
+
+.rmd-title{
+  align-self: center;
+  padding-left: 10px;
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "RMD": {
+      "root": "",
+      "sourceRoot": "WebAppUI/src",
+      "projectType": "application",
+      "prefix": "app",
+      "schematics": {},
+      "targets": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/RMD",
+            "index": "WebAppUI/src/index.html",
+            "main": "WebAppUI/src/main.ts",
+            "polyfills": "WebAppUI/src/polyfills.ts",
+            "tsConfig": "WebAppUI/src/tsconfig.app.json",
+            "assets": [
+              "WebAppUI/src/favicon.ico",
+              "WebAppUI/src/assets"
+            ],
+            "styles": [
+              "WebAppUI/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "WebAppUI/src/environments/environment.ts",
+                  "with": "WebAppUI/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "RMD:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "RMD:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "RMD:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "WebAppUI/src/test.ts",
+            "polyfills": "WebAppUI/src/polyfills.ts",
+            "tsConfig": "WebAppUI/src/tsconfig.spec.json",
+            "karmaConfig": "WebAppUI/src/karma.conf.js",
+            "styles": [
+              "WebAppUI/src/styles.css"
+            ],
+            "scripts": [],
+            "assets": [
+              "WebAppUI/src/favicon.ico",
+              "WebAppUI/src/assets"
+            ]
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "WebAppUI/src/tsconfig.app.json",
+              "WebAppUI/src/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "RMD-e2e": {
+      "root": "e2e/",
+      "projectType": "application",
+      "targets": {
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "e2e/protractor.conf.js",
+            "devServerTarget": "RMD:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "RMD:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": "e2e/tsconfig.e2e.json",
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "RMD"
+}
