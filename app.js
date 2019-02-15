@@ -5,11 +5,19 @@ const routers = require("./ford/api/patients/routers");
 
 const app = express();
 
-/*app.use(function(req, res,next) {
+app.use(function(req, res,next) {
      res.header("Access-Control-Allow-Origin", "*");
+     res.header("Access-Control-Allow-Methods", "*");
      res.header("Access-Control-Allow-Headers", "*");
-    res.setHeader('content-type', 'application/json');
+     res.setHeader('content-type', 'application/json');
      next();
+});
+
+/*app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  next();
 });*/
 
 app.use('/', express.static(__dirname + '/dist/RMD'));
@@ -32,7 +40,7 @@ app.get('/update', (req,res) =>{
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect(config.getMlabConnectionString(),{useNewUrlParser: true });
+mongoose.connect(config.getDBConnectionString(),{useNewUrlParser: true });
 
 routers(app)
 

@@ -1,7 +1,7 @@
 <mat-list>
   <mat-list-item class="list-container">
       <mat-form-field class="search">
-        <input matInput placeholder="Search Patient" type="search" [formControl]="searchValue">
+        <input matInput placeholder="Search Patient ID" type="search" [formControl]="searchValue">
       </mat-form-field>
   </mat-list-item>
   <mat-list-item (click)="viewPatient(p)" matRipple *ngFor="let p of patients">

@@ -30,13 +30,14 @@ export class UpdatePatientComponent implements OnInit {
   }
 
   save(){
-    this.updatePatientForm.value['_id'] = this.patientNodeId;
-    this.patientAddService.updatePatient(this.updatePatientForm.value).subscribe(successMsg => {
-      successMsg;
-      this.router.navigate(['/patientList']);
-    });
+    if(this.updatePatientForm.valid) {
+      this.updatePatientForm.value['_id'] = this.patientNodeId;
+      this.patientAddService.updatePatient(this.updatePatientForm.value).subscribe(successMsg => {
+        successMsg;
+        this.router.navigate(['/patientList']);
+      });
 
-
+    }
   }
 
   ngOnInit() {

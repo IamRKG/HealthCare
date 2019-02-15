@@ -6,15 +6,15 @@ const patientController = function() {
     }
 
     this.getRepoPatientById = function(req,res){
-        repository.getPatientById(req,res);  
+        repository.getPatientById(req,res);
     }
 
     this.repoSavePatient = function(req,res){
-        repository.savePatient(req,res);  
+        repository.savePatient(req,res);
     }
 
     this.repoUpdatePatient = function(req,res){
-        repository.updatePatient(req,res);  
+        repository.updatePatient(req,res);
     }
 
     this.repoSearch = function (req,res) {

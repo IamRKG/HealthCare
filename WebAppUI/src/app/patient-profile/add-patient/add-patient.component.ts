@@ -22,13 +22,14 @@ export class AddPatientComponent implements OnInit {
 
 
   addPatient(){
-    this.patientAddService.addPatient(this.addProfileForm.value).subscribe(successMsg => {
-      this.router.navigate(['/patientList']);
-      return successMsg;
-    });
+    if(this.addProfileForm.valid) {
+      this.patientAddService.addPatient(this.addProfileForm.value).subscribe(successMsg => {
+        this.router.navigate(['/patientList']);
+        return successMsg;
+      });
+    }
   }
 
   ngOnInit() {
   }
-
 }

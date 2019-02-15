@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {Router} from '@angular/router';
 import {PatientAddService} from "../patientServices/patient-add.service";
 import {Patients} from "../patientInterface/patientsInterface"
 import {debounceTime, distinctUntilChanged} from "rxjs/operators";
@@ -17,16 +17,15 @@ export class PatientListComponent implements OnInit {
   searchValue:FormControl;
 
   constructor(
-    private route: ActivatedRoute,
     private router: Router,
     private patientAddService:PatientAddService,
     private updatePatientSharedServiceService : UpdatePatientSharedServiceService
   ) {}
 
   showPatientList(){
-     this.patientAddService.getPatient().subscribe( (patients:Patients[])  => {
-       this.patients = patients;
-     });
+    this.patientAddService.getPatient().subscribe( (patients:Patients[])  => {
+      this.patients = patients;
+    });
   }
 
   viewPatient(patient){
@@ -57,7 +56,7 @@ export class PatientListComponent implements OnInit {
   }
 
   ngOnInit(){
-   this.showPatientList();
+    this.showPatientList();
     this.search()
   }
 }

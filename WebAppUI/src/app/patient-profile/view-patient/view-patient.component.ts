@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UpdatePatientSharedServiceService} from "../sharedServices/update-patient-shared-service.service";
 import {Patients} from "../patientInterface/patientsInterface";
 import {ActivatedRoute,Router} from "@angular/router"
+import {DeleteServices} from "../../deleteServices/DeleteServices";
 
 @Component({
   selector: 'app-view-patient',
@@ -15,12 +16,14 @@ export class ViewPatientComponent implements OnInit {
   constructor(
     private updatePatientSharedServiceService:UpdatePatientSharedServiceService,
     private route:ActivatedRoute,
-    private router:Router
+    private router:Router,
+    private deleteServices:DeleteServices
   ) { }
 
   showPatient(){
     this.updatePatientSharedServiceService.getPatient().subscribe((response:Patients) => {
       this.patient = response
+      console.log(this.patient);
     })
   };
 
@@ -29,6 +32,11 @@ export class ViewPatientComponent implements OnInit {
     this.router.navigate(['/update'])
   };
 
+  deletePatient(patient){
+    this.deleteServices.deletePatient(patient).subscribe((response)=> {
+      this.router.navigate(['/patientList'])
+    })
+  }
   ngOnInit() {
     this.showPatient();
   }

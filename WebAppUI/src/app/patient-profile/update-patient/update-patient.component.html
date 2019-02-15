@@ -1,152 +1,320 @@
+<form [formGroup]="updatePatientForm" class="add-container" novalidate (ngSubmit)="save()">
+  <mat-list>
+    <mat-list-item>
+      <h2>Add Patient</h2>
+    </mat-list-item>
+  </mat-list>
 
-<form [formGroup]="updatePatientForm" class="add-container">
   <mat-list>
     <mat-list-item>
-      <h2>Edit Patient</h2>
+      <mat-form-field>
+        <input required matInput placeholder="Patient Id" formControlName="patientID" type="number">
+
+        <mat-error *ngIf="updatePatientForm.controls.patientID.hasError('required')">
+          Patient Id is <strong>required</strong>
+        </mat-error>
+
+        <mat-error *ngIf="updatePatientForm.controls.patientID.hasError('pattern')">
+          Patient Id must be not start with 0.
+        </mat-error>
+
+        <mat-error *ngIf="updatePatientForm.controls.patientID.hasError('min')">
+          Patient Id must be at least 4 characters long.
+        </mat-error>
+
+        <mat-error *ngIf="updatePatientForm.controls.patientID.hasError('max')">
+          Patient Id must be not more than 8 characters long.
+        </mat-error>
+
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Patient Name" formControlName="patientName">
+        <mat-error *ngIf="updatePatientForm.controls.patientName.hasError('required')">
+          Patient Id is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
     </mat-list-item>
   </mat-list>
   <mat-list>
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Patient Id" formControlName="patientID">
+        <input required matInput placeholder="Age" formControlName="age" type="number">
+        <mat-error *ngIf="updatePatientForm.controls.age.hasError('required')">
+          Age is <strong>required</strong>
+        </mat-error>
+
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
     <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient Name" formControlName="patientName">
+      <mat-form-field class="list-h">
+        <input required matInput placeholder="Sex" formControlName="sex">
+
+        <mat-error *ngIf="updatePatientForm.controls.sex.hasError('required')">
+          Sex is <strong>required</strong>
+        </mat-error>
+
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
     <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Age" formControlName="age">
+      <mat-form-field >
+        <input required matInput placeholder="Pateint In Time" formControlName="patientInTime" type="time">
+        <mat-error *ngIf="updatePatientForm.controls.patientInTime.hasError('required')">
+          Pateint In Time is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Sex" formControlName="sex">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Pateint In Time" formControlName="patientInTime">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput [matDatepicker]="picker"  placeholder="Patient Date of Birth" formControlName="dob">
+        <input required matInput [matDatepicker]="picker" placeholder="Patient Date of Birth" formControlName="dob">
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
+        <mat-datepicker #picker ></mat-datepicker>
+
+        <mat-error *ngIf="updatePatientForm.controls.dob.hasError('required')">
+          Patient Date of Birth is <strong>required</strong>
+        </mat-error>
+
+
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Blood Group" formControlName="bloodGroup">
+        <input required matInput placeholder="Blood Group" formControlName="bloodGroup">
+
+        <mat-error *ngIf="updatePatientForm.controls.bloodGroup.hasError('required')">
+          Blood Group is <strong>required</strong>
+        </mat-error>
+
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Mobile Number" formControlName="contactNo">
+        <input required matInput placeholder="Mobile Number" formControlName="contactNo" type="number">
+        <mat-error *ngIf="updatePatientForm.controls.contactNo.hasError('required')">
+          Mobile Number is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <textarea matInput placeholder="Patient Address" formControlName="patientAddress"></textarea>
+        <textarea required matInput placeholder="Patient Address" formControlName="patientAddress"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.patientAddress.hasError('required')">
+          Patient Address is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Email Address" formControlName="emailAddress">
+        <input required matInput placeholder="Email Address" formControlName="emailAddress" type="email">
+        <mat-error *ngIf="updatePatientForm.controls.emailAddress.hasError('required')">
+          Email Address is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Doctors Name" formControlName="doctorsName">
+        <input required matInput placeholder="Doctors Name" formControlName="doctorName">
+        <mat-error *ngIf="updatePatientForm.controls.doctorName.hasError('required')">
+          Doctors Name is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Speciality" formControlName="speciality">
+        <input required matInput placeholder="Speciality" formControlName="speciality">
+        <mat-error *ngIf="updatePatientForm.controls.speciality.hasError('required')">
+          Speciality is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Patient Height" formControlName="patientHeight">
+        <input required matInput placeholder="Patient Height" formControlName="patientHeight">
+        <mat-error *ngIf="updatePatientForm.controls.patientHeight.hasError('required')">
+          Patient Height is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
+  </mat-list>
+  <mat-list>
+
     <mat-list-item>
       <mat-form-field>
-        <input matInput placeholder="Patient Weight" formControlName="patientWeight">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient B.P" formControlName="patientBP">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient Pulse" formControlName="patientPulse">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient Temperature" formControlName="patientTemperature">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient SPO" formControlName="patientSPO">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Patient R.P" formControlName="patientRP">
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Patient Clinical History" formControlName="patientClinicalHistory"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Treatments/Procedures" formControlName="treatmentsProcedures"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Diagnosis Provisional" formControlName="diagnosisProvisional"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Notes:" formControlName="notes"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Treatment" formControlName="treatment"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Investigation" formControlName="investigation"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <textarea matInput placeholder="Review/Advise" formControlName="review"></textarea>
-      </mat-form-field>
-    </mat-list-item>
-    <mat-list-item>
-      <mat-form-field>
-        <input matInput placeholder="Amount" formControlName="amount">
+        <input required matInput placeholder="Patient Weight" formControlName="patientWeight">
+        <mat-error *ngIf="updatePatientForm.controls.patientWeight.hasError('required')">
+          Patient Weight is <strong>required</strong>
+        </mat-error>
       </mat-form-field>
     </mat-list-item>
   </mat-list>
   <mat-list>
     <mat-list-item>
-      <button mat-raised-button color="primary" type="button" (click)="save()">Save</button>
+      <mat-form-field>
+        <input required matInput placeholder="Patient B.P" formControlName="patientBP">
+        <mat-error *ngIf="updatePatientForm.controls.patientBP.hasError('required')">
+          Patient B.P is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Patient Pulse" formControlName="patientPulse">
+        <mat-error *ngIf="updatePatientForm.controls.patientPulse.hasError('required')">
+          Patient Pulse is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Patient Temperature" formControlName="patientTemperature">
+        <mat-error *ngIf="updatePatientForm.controls.patientTemperature.hasError('required')">
+          Patient Temperature is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Patient SPO" formControlName="patientSPO">
+        <mat-error *ngIf="updatePatientForm.controls.patientSPO.hasError('required')">
+          Patient SPO is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Patient R.P" formControlName="patientRP">
+        <mat-error *ngIf="updatePatientForm.controls.patientRP.hasError('required')">
+          Patient R.P is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Patient Clinical History"
+                  formControlName="patientClinicalHistory"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.patientClinicalHistory.hasError('required')">
+          Patient Clinical History is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Treatments/Procedures"
+                  formControlName="treatmentsProcedures"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.treatmentsProcedures.hasError('required')">
+          Treatments/Procedures is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Diagnosis Provisional"
+                  formControlName="diagnosisProvisional"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.diagnosisProvisional.hasError('required')">
+          Diagnosis Provisional is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Notes:" formControlName="notes"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.notes.hasError('required')">
+          Notes is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Treatment" formControlName="treatment"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.treatment.hasError('required')">
+          Treatment is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Investigation" formControlName="investigation"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.investigation.hasError('required')">
+          Investigation is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item class="list-h">
+      <mat-form-field>
+        <textarea required rows="3" matInput placeholder="Review/Advise" formControlName="review"></textarea>
+        <mat-error *ngIf="updatePatientForm.controls.review.hasError('required')">
+          Review is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+  <mat-list>
+    <mat-list-item>
+      <mat-form-field>
+        <input required matInput placeholder="Amount" formControlName="amount" type="number">
+        <mat-error *ngIf="updatePatientForm.controls.amount.hasError('required')">
+          Amount is <strong>required</strong>
+        </mat-error>
+      </mat-form-field>
+    </mat-list-item>
+  </mat-list>
+
+  <mat-list>
+    <mat-list-item>
+      <button mat-raised-button color="primary" type="submit">Update</button>
     </mat-list-item>
   </mat-list>
 

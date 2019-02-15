@@ -3,3 +3,7 @@
 html,body{
   margin: 0px;
 }
+
+.list-h{
+  height: 80px !important;
+}
