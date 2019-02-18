@@ -22,26 +22,26 @@ app.use(function(req, res,next) {
 
 app.use('/', express.static(__dirname + '/dist/RMD'));
 
-app.get('/patientList', (req,res) =>{
+app.get('/patientList', (req,res) => {
   res.redirect('/')
 });
 
-app.get('/view', (req,res) =>{
+app.get('/view', (req,res) => {
   res.redirect('/')
 });
 
-app.get('/add', (req,res) =>{
+app.get('/add', (req,res) => {
   res.redirect('/')
 });
 
-app.get('/update', (req,res) =>{
+app.get('/update', (req,res) => {
   res.redirect('/')
 });
 
 const port = process.env.PORT || 3000;
 
-mongoose.connect(config.getDBConnectionString(),{useNewUrlParser: true });
+mongoose.connect(config.getDBConnectionString(),{ useNewUrlParser: true });
 
 routers(app)
 
-app.listen(port,()=> console.log("server listing 3000"));
+app.listen(port,() => console.log("server listing 3000"));
