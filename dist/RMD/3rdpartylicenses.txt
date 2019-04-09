@@ -202,7 +202,7 @@ Apache License
  See the License for the specific language governing permissions and
  limitations under the License.
 
-core-js@2.6.3
+core-js@2.6.5
 MIT
 Copyright (c) 2014-2019 Denis Pushkarev
 

@@ -9,16 +9,31 @@
     "ng": "ng",
     "startUI": "ng serve",
     "build": "ng build",
-    "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": ["<rootDir>/WebAppUI/src/setupJest.ts"],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "<rootDir>/WebAppUI/src/tsconfig.spec.json"
+      },
+      "__TRANSFORM_HTML__": true
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!@ngrx|angular2-ui-switch|ng-dynamic)"
+    ],
+    "transform": {
+      "^.+\\.(ts|html)$": "<rootDir>/node_modules/jest-preset-angular/preprocessor.js",
+      "^.+\\.js$": "babel-jest"
+    }
   },
   "author": "Ford Motor Company",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.3",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.4",
     "@angular/animations": "^6.1.10",
     "@angular/cdk": "^7.1.1",
     "@angular/common": "^6.1.0",
@@ -30,7 +45,10 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "body-parser": "^1.18.3",
     "core-js": "^2.5.4",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.4",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
@@ -41,11 +59,15 @@
     "@angular/language-service": "^6.1.0",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/jest": "^24.0.6",
     "@types/node": "~8.9.4",
+    "babel-preset-env": "^1.7.0",
     "codelyzer": "~4.3.0",
     "concurrently": "^4.1.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
+    "jest": "^24.1.0",
+    "jest-preset-angular": "^6.0.2",
     "karma": "~3.0.0",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~2.0.1",

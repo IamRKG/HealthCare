@@ -1,29 +1,30 @@
 export interface Patients {
-  patientID:Number
-  patientName:String
-  age:Number
-  sex:String
-  patientInTime:Number
-  dob:String
-  bloodGroup:String
-  contactNo:Number
-  patientAddress:String
-  emailAddress:String
-  doctorName:String
-  speciality:String
-  patientHeight:String
-  patientWeight:String
-  patientBP:String
-  patientPulse:String
-  patientTemperature:String
-  patientSPO:String
-  patientRP:String
-  patientClinicalHistory:String
-  diagnosisProvisional:String
-  treatmentsProcedures:String
-  notes:String
-  treatment:String
-  investigation:String
-  review:String
-  amount:Number
+  patientID: Number;
+  patientName: String;
+  age: Number;
+  sex: String;
+  patientInTime: Number;
+  dob: String;
+  bloodGroup: String;
+  contactNo: Number;
+  patientAddress: String;
+  emailAddress: String;
+  doctorName: String;
+  speciality: String;
+  patientHeight: String;
+  patientWeight: String;
+  patientBP: String;
+  patientPulse: String;
+  patientTemperature: String;
+  patientSPO: String;
+  patientRP: String;
+  patientClinicalHistory: String;
+  diagnosisProvisional: String;
+  treatmentsProcedures: String;
+  IPNo: Number;
+  notes: String;
+  treatment: String;
+  investigation: String;
+  review: String;
+  amount: Number;
 }
